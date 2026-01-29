@@ -46,6 +46,7 @@ const ProjectShowcase = ({ paused = false }) => {
   return (
     <div className="w-full max-w-xl flex flex-col justify-center gap-3 text-left">
       <h2
+      style={{fontFamily: "Poppins"}}
         className={`text-5xl font-bold transition-all duration-700 ${
           animate
             ? "opacity-100 blur-0 translate-y-0"

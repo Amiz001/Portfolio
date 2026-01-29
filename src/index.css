@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-:root {
+:root , html{
   height: 100vh;
   width: 100vw;
   background-color: black;
   color: white;
   margin: 0;
   padding: 0;
-  font-family:Verdana, sans-serif
+  font-family: 'Inter';
+  scroll-behavior: smooth;
 }
