@@ -73,7 +73,7 @@ function getIcon(icName) {
   for (let i = 0; i < techLogosAll.length; i++) {
     if (techLogosAll[i].title === icName) {
       return (
-        <div className="flex justify-center gap-2 items-center bg-white/90 text-black font-bold w-auto h-8 px-2 rounded-sm text-sm">
+        <div className="flex justify-center gap-2 items-center bg-white/5 backdrop-blur-lg text-white font-bold w-auto h-8 px-2 rounded-sm border-1 border-white/20 text-sm">
           {techLogosAll[i].node} {techLogosAll[i].title}
         </div>
       );
