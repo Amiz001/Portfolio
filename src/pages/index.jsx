@@ -11,6 +11,7 @@
   import { PiHandWavingFill } from "react-icons/pi";
   import LogoLoop from "../components/LogoLoop";
   import ProjectShowcase from "../components/ProjectShowcase";
+  import Contact from './contact'
 
   import {
     SiReact,

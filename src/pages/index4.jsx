@@ -5,6 +5,7 @@ import GradientText from "../components/GradientText";
 import { PiHandWavingFill } from "react-icons/pi";
 import LogoLoop from "../components/LogoLoop";
 import ProjectShowcase from "../components/ProjectShowcase";
+import Contact from "./contact";
 
 import {
   SiReact,
@@ -458,7 +459,14 @@ const Hero = () => {
 
       <section
         id="contact"
-        className="w-full min-h-[50vh] md:h-130 px-4 sm:px-8 md:px-32 py-8 md:py-16 bg-black flex justify-center items-center overflow-hidden"
+        className="relative w-full h-screen sm:px-32 py-16 sm:mb-0 bg-black flex justify-center items-center "
+      >
+        <Contact />
+      </section>
+
+      <section
+        id=""
+        className="w-full min-h-[50vh] md:h-130 mt-4 sm:mt-20 md:mt-40 px-4 sm:px-8 md:px-32 py-8 md:py-16 bg-black flex justify-center items-center overflow-hidden"
       >
         <div className="relative w-full h-full bg-black/50 rounded-2xl md:rounded-4xl border-1 border-white/10 overflow-hidden p-8 md:p-0">
           <div className="absolute right-0 w-20 h-20 md:w-30 md:h-30 bg-gradient-to-br rounded-4xl from-[#4079ff] to-[#40ffaa] blur-[100px] md:blur-[150px]"></div>

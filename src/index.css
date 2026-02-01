@@ -10,3 +10,18 @@
   font-family: 'Inter';
   scroll-behavior: smooth;
 }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 1s 5s ease-out forwards;
+}
