@@ -7,6 +7,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import GradientText from '../components/GradientText'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -100,10 +101,17 @@ const Contact = () => {
 
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            <span className="bg-gradient-to-br from-[#4079ff] to-[#40ffaa] text-transparent bg-clip-text">
-              Get In Touch
-            </span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 flex justify-center">
+           
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={20}
+                showBorder={false}
+                className="custom-class"
+              >
+                Get In Touch
+              </GradientText>
+
           </h1>
           <p className="text-gray-300 text-base sm:text-sm max-w-2xl mx-auto w-[70%]"></p>
         </div>

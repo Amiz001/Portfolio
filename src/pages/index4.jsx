@@ -11,17 +11,29 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
   SiReact,
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
+  SiExpress,
+  SiNodedotjs,
+  SiMongodb,
+  SiMysql,
+  SiPhp,
+  SiGit,
+  SiOpenai,
 } from "react-icons/si";
+
 import {
   FaGithub,
   FaExternalLinkAlt,
   FaLinkedin,
   FaInstagram,
   FaEnvelope,
+  FaJava,
 } from "react-icons/fa";
 import { AiOutlineHome, AiOutlineProject, AiOutlineMail } from "react-icons/ai";
 
@@ -40,6 +52,35 @@ const techLogos = [
   },
 ];
 
+const techLogosAll = [
+  { node: <SiHtml5 size={20} />, title: "html" },
+  { node: <SiCss3 size={20} />, title: "css" },
+  { node: <SiJavascript size={20} />, title: "javascript" },
+  { node: <SiReact size={20} />, title: "react" },
+  { node: <SiTailwindcss size={20} />, title: "tailwind css" },
+  { node: <SiExpress size={20} />, title: "express js" },
+  { node: <SiNodedotjs size={20} />, title: "node js" },
+  { node: <SiMongodb size={20} />, title: "mongo" },
+  { node: <SiMysql size={20} />, title: "mysql" },
+  { node: <FaJava size={20} />, title: "java" },
+  { node: <FaJava size={20} />, title: "java servlets" },
+  { node: <SiPhp size={20} />, title: "php" },
+  { node: <SiOpenai size={20} />, title: "open ai" },
+  { node: <SiGit size={20} />, title: "git" },
+];
+
+function getIcon(icName) {
+  for (let i = 0; i < techLogosAll.length; i++) {
+    if (techLogosAll[i].title === icName) {
+      return (
+        <div className="flex justify-center gap-2 items-center bg-white/90 text-black font-bold w-auto h-8 px-2 rounded-sm text-sm">
+          {techLogosAll[i].node} {techLogosAll[i].title}
+        </div>
+      );
+    }
+  }
+}
+
 const projects = [
   {
     name: "ParkBay",
@@ -48,7 +89,7 @@ const projects = [
     image: "./images/parkbay.png",
     description:
       "ParkBay is an Smart Parking Management System using the MERN stack to make parking, membership, and payments simple and seamless for users and admins. This was our Second Year Second Semester academic project, where we combined design, backend logic, and user management into a full-featured solution.",
-    Stack: ["react", "express", "node", "mongo", "tailwind css"],
+    Stack: ["react", "express js", "node js", "mongo", "tailwind css"],
     githubLink: "https://github.com/Amiz001/parking-management-system",
     demoLink: "https://www.linkedin.com/in/amila-dev/",
   },
@@ -81,6 +122,7 @@ const Hero = () => {
   const [active, setActive] = useState("hero");
   const [index, setIndex] = useState(1);
   const [animate, setAnimate] = useState(true);
+  const [animeStatus, setAnimeStatus] = useState(true);
   const intervalRef = useRef(null);
 
   const current = projects[index];
@@ -95,8 +137,8 @@ const Hero = () => {
       setAnimate(false);
 
       setTimeout(() => {
-        setIndex((prev) => (prev + 1) % projects.length); 
-        setAnimate(true); 
+        setIndex((prev) => (prev + 1) % projects.length);
+        setAnimate(true);
       }, 300);
     }, 5000);
 
@@ -127,36 +169,34 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  const elements = gsap.utils.toArray(".reveal-section");
+    const elements = gsap.utils.toArray(".reveal-section");
 
-  elements.forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 50, scale: 0.95, filter: "blur(8px)" },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
-          end: "bottom 20%", 
-          toggleActions: "play reverse play reverse", 
-          markers: false, 
-        },
-      }
-    );
-  });
+    elements.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50, scale: 0.95, filter: "blur(8px)" },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+            markers: false,
+          },
+        }
+      );
+    });
 
-  return () => ScrollTrigger.getAll().forEach((t) => t.kill());
-}, []);
-
-
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  }, []);
 
   return (
     <div className="pb-20 md:pb-0 overflow-hidden">
@@ -166,7 +206,7 @@ const Hero = () => {
           <img src="/images/LOGO.png" alt="Logo" className="w-8" />
 
           <ul className="relative flex gap-8 text-sm text-gray-200 px-4">
-            {active === "hero" && (
+            {active === "home" && (
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-gradient-to-br from-[#4079ff] to-[#40ffaa] rounded-full"></div>
             )}
             {active === "projects" && (
@@ -176,7 +216,7 @@ const Hero = () => {
               <div className="absolute left-38 top-1/2 -translate-y-1/2 w-2 h-2 bg-gradient-to-br from-[#4079ff] to-[#40ffaa] rounded-full"></div>
             )}
 
-            {["hero", "projects", "contact"].map((section) => (
+            {["home", "projects", "contact"].map((section) => (
               <a
                 key={section}
                 href={`#${section}`}
@@ -258,7 +298,7 @@ const Hero = () => {
       </nav>
 
       <section
-        id="hero"
+        id="home"
         className="reveal-section relative min-h-screen w-full bg-black px-4 sm:px-8 md:px-16 py-6 overflow-hidden"
       >
         <div className="mt-12 md:mt-20 flex flex-col sm:items-start items-center gap-6 md:gap-8">
@@ -318,7 +358,7 @@ const Hero = () => {
 
               <div className="relative inline-block w-full p-[1px] rounded-sm bg-gradient-to-br from-[#dedede] to-[#3c3c3c]">
                 <a href="#contact">
-                  <button className="w-full px-6 sm:px-8 py-3 rounded-sm bg-black text-white text-sm font-medium">
+                  <button className="w-full px-6 sm:px-8 py-3 rounded-sm bg-black text-white text-sm font-medium cursor-pointer hover:bg-black/95 active:bg-black/90">
                     Contact Me
                   </button>
                 </a>
@@ -329,7 +369,7 @@ const Hero = () => {
 
               <div className="relative inline-block w-full p-[1px] rounded-sm bg-gradient-to-br from-[#4079ff] to-[#40ffaa]">
                 <a href="https://github.com/Amiz001">
-                  <button className="w-full px-6 sm:px-8 py-3 rounded-sm bg-black text-white text-sm font-medium">
+                  <button className="w-full px-6 sm:px-8 py-3 rounded-sm bg-black text-white text-sm font-medium cursor-pointer hover:bg-black/95  active:bg-black/90">
                     Github
                   </button>
                 </a>
@@ -459,7 +499,7 @@ const Hero = () => {
           ))}
         </div>
 
-        <div className="hidden h-full md:flex sm:flex-col items-start justify-start gap-6 md:gap-10 mt-20 md:mt-40">
+        <div className="hidden h-full md:flex sm:flex-col items-start justify-start gap-6 md:gap-10 mt-20 md:mt-20">
           <h1 className="text-lg md:text-xl font-normal flex justify-center gap-2 py-3 border-b-1 border-[#ffffff5d] w-auto md:w-[10%] opacity-80">
             Recent
             <span className="font-bold">Work</span>
@@ -487,6 +527,26 @@ const Hero = () => {
               >
                 {current.description}
               </p>
+
+              <div className="flex flex-col gap-5 mt-10">
+                <p
+                  className={`font-bold ? "fade-in" : ""}`}
+                >
+                  Main Stack
+                </p>
+                <div className="w-full flex flex-wrap gap-5">
+                  {current.Stack.map((s, i) => {
+                    return (
+                      <div
+                        className={`${animate ? "fade-in" : ""}`}
+                        style={{ animationDuration: `${i * 0.5}s` }}
+                      >
+                        {getIcon(s)}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -517,7 +577,7 @@ const Hero = () => {
                 Real
               </span>
             </h1>
-            <a href="https://www.linkedin.com/in/amila-dev/">
+            <a href="#contact">
               <button className="w-auto px-8 md:px-6 py-3 md:py-2 text-white border-2 font-medium border-white rounded-2xl md:rounded-4xl hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
                 Contact Me
               </button>
@@ -545,16 +605,16 @@ const Hero = () => {
                 aria-label="Footer navigation"
               >
                 <a
+                  href="#home"
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  Home
+                </a>
+                <a
                   href="#projects"
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
                   Projects
-                </a>
-                <a
-                  href="#about"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
-                >
-                  About
                 </a>
                 <a
                   href="#contact"
