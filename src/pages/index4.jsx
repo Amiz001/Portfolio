@@ -299,7 +299,7 @@ const Hero = () => {
 
       <section
         id="home"
-        className="reveal-section relative min-h-screen w-full bg-black px-4 sm:px-8 md:px-16 py-6 overflow-hidden"
+        className="sm:reveal-section relative min-h-screen w-full bg-black px-4 sm:px-8 md:px-16 py-6 overflow-hidden"
       >
         <div className="mt-12 md:mt-20 flex flex-col sm:items-start items-center gap-6 md:gap-8">
           <h1
@@ -389,7 +389,7 @@ const Hero = () => {
 
       <section
         id="projects"
-        className="reveal-section relative w-screen min-h-screen bg-black px-4 sm:px-8 md:px-16 py-6 overflow-hidden"
+        className="sm:reveal-section relative w-screen min-h-screen bg-black px-4 sm:px-8 md:px-16 py-6 overflow-hidden"
       >
         <div className="hidden sm:block absolute bottom-0 left-0 w-[60%] sm:w-[50%] md:w-[40%] h-[40%] bg-gradient-to-tl from-[#4079ff] to-[#40ffaa] blur-[150px] sm:blur-[200px] opacity-20"></div>
         <div className="hidden sm:block absolute top-0 right-0 w-[60%] sm:w-[50%] md:w-[40%] h-[40%] bg-gradient-to-tl from-[#4079ff] to-[#40ffaa] blur-[150px] sm:blur-[200px] opacity-20" />
@@ -554,7 +554,7 @@ const Hero = () => {
 
       <section
         id="contact"
-        className="reveal-section relative w-full h-screen sm:px-32 py-16 sm:mb-0 bg-black flex justify-center items-center "
+        className="sm:reveal-section relative w-full h-screen sm:px-32 py-16 sm:mb-0 bg-black flex justify-center items-center "
       >
         <Contact />
       </section>
@@ -563,7 +563,7 @@ const Hero = () => {
         id=""
         className="w-full min-h-[50vh] md:h-130 mt-4 sm:mt-20 md:mt-40 px-4 sm:px-8 md:px-32 py-8 md:py-16 bg-black flex justify-center items-center overflow-hidden"
       >
-        <div className="reveal-section relative w-full h-full bg-black/50 rounded-2xl md:rounded-4xl border-1 border-white/10 overflow-hidden p-8 md:p-0">
+        <div className="sm:reveal-section relative w-full h-full bg-black/50 rounded-2xl md:rounded-4xl border-1 border-white/10 overflow-hidden p-8 md:p-0">
           <div className="absolute right-0 w-20 h-20 md:w-30 md:h-30 bg-gradient-to-br rounded-4xl from-[#4079ff] to-[#40ffaa] blur-[100px] md:blur-[150px]"></div>
           <div className="absolute left-0 bottom-0 w-20 h-20 md:w-30 md:h-30 bg-gradient-to-br rounded-4xl from-[#4079ff] to-[#40ffaa] blur-[100px] md:blur-[150px]"></div>
           <div className="relative md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 flex flex-col justify-center items-center gap-8 md:gap-12 h-full">
@@ -586,7 +586,7 @@ const Hero = () => {
         </div>
       </section>
 
-      <footer className="reveal-section w-full bg-black border-t border-white/10 px-4 sm:px-8 md:px-16 py-8 sm:py-12">
+      <footer className="sm:reveal-section w-full bg-black border-t border-white/10 px-4 sm:px-8 md:px-16 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto">
           {/* Footer content */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
