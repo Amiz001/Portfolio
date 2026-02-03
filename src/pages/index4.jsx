@@ -122,7 +122,6 @@ const Hero = () => {
   const [active, setActive] = useState("hero");
   const [index, setIndex] = useState(1);
   const [animate, setAnimate] = useState(true);
-  const [animeStatus, setAnimeStatus] = useState(true);
   const intervalRef = useRef(null);
 
   const current = projects[index];
@@ -168,7 +167,7 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
+  {/*useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const elements = gsap.utils.toArray(".reveal-section");
@@ -196,7 +195,66 @@ const Hero = () => {
     });
 
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
-  }, []);
+  }, []); */}
+
+  useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    gsap.utils.toArray(".reveal-section").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50, scale: 0.95, filter: "blur(8px)" },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+            markers: false,
+          },
+        }
+      );
+    });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    gsap.utils.toArray(".reveal-section").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50, scale: 0.95, filter: "blur(8px)" },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 95%",
+            end: "bottom 0%",
+            toggleActions: "play reverse play reverse",
+            markers: false,
+          },
+        }
+      );
+    });
+  });
+
+  return () => mm.revert();
+}, []);
+
+
+
 
   return (
     <div className="pb-20 md:pb-0 overflow-hidden">
@@ -240,17 +298,17 @@ const Hero = () => {
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-black via-black/95 to-black/80 border-t border-white/20 backdrop-blur-lg">
         <ul className="flex justify-around items-center py-4 px-4">
           <a
-            href="#hero"
-            onClick={() => setActive("hero")}
+            href="#home"
+            onClick={() => setActive("home")}
             className="flex flex-col items-center gap-1"
           >
             <AiOutlineHome
               size={24}
-              className={active === "hero" ? "text-white" : "text-gray-400"}
+              className={active === "home" ? "text-white" : "text-gray-400"}
             />
             <span
               className={`text-xs ${
-                active === "hero" ? "text-white font-semibold" : "text-gray-400"
+                active === "home" ? "text-white font-semibold" : "text-gray-400"
               }`}
             >
               Home

@@ -2,7 +2,7 @@
 
 :root , html{
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   background-color: black;
   color: white;
   margin: 0;
@@ -40,3 +40,21 @@
 .fade-in {
   animation: fadeIn ease-out forwards;
 }
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111112; /* very dark blue */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1d1f1f; /* your dark blue theme color */
+  border-radius: 10;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #292929; /* lighter dark blue on hover */}
