@@ -125,9 +125,7 @@ const Hero = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [active, setActive] = useState("hero");
   const [index, setIndex] = useState(1);
-  const [animate, setAnimate] = useState(true);
-  const [loading, setLoading] = useState(true);
-  const [exit, setExit] = useState(false);
+  const [animate, setAnimate] = useState(true);;
   const intervalRef = useRef(null);
 
   const current = projects[index];
@@ -229,24 +227,9 @@ const Hero = () => {
     return () => mm.revert();
   }, []);
 
-  useEffect(() => {
-    const exitTimer = setTimeout(() => {
-      setExit(true);
-    }, 3000);
-
-    const removeTimer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-
-    return () => {
-      clearTimeout(exitTimer);
-      clearTimeout(removeTimer);
-    };
-  }, []);
-
   return (
     <div className="pb-20 md:pb-0 overflow-hidden">
-      <div className="fixed z-200 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black h-[2000px] w-[2000px] flex justify-center items-center overflow-hidden visible fade-out2">
+      <div className="fixed z-200 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-blue-600 to-green-400 h-[2000px] w-[2000px] flex justify-center items-center overflow-hidden visible fade-out2">
         <div className="loader absolute z-200"></div>
       </div>
 
