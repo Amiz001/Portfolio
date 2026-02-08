@@ -143,7 +143,7 @@ const Hero = () => {
         setIndex((prev) => (prev + 1) % projects.length);
         setAnimate(true);
       }, 300);
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(intervalRef.current);
   }, [isPaused]);
@@ -441,7 +441,7 @@ const Hero = () => {
           <CardSwap
             cardDistance={60}
             verticalDistance={70}
-            delay={5000}
+            delay={4000}
             pauseOnHover={true}
           >
             {projects.map((project) => (
