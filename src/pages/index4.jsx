@@ -25,6 +25,7 @@ import {
   SiPhp,
   SiGit,
   SiOpenai,
+  SiFigma
 } from "react-icons/si";
 
 import {
@@ -71,6 +72,7 @@ const techLogosAll = [
   { node: <SiPhp size={20} />, title: "php" },
   { node: <SiOpenai size={20} />, title: "open ai" },
   { node: <SiGit size={20} />, title: "git" },
+  { node: <SiFigma size={20} />, title: "figma" },
 ];
 
 function getIcon(icName) {
