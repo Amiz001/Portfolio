@@ -121,6 +121,17 @@ const projects = [
     githubLink: "https://github.com/Amiz001/Vehicle-Rental-System",
     demoLink: "https://www.linkedin.com/in/amila-dev/",
   },
+  /*{
+    name: "Suva Saviya",
+    subtitle: "AI Chatbot",
+    color: "purple-500",
+    image: "./images/suvasaviya.jpg",
+    description:
+      "Suva Saviya is a chatbot interface designed for a Bookmark 3.0 (UI/UX competition) organized by SLIIT AIESEC club. Focused on an intuitive and responsive UI, our team won 1st place for design excellence. Tech Stack: HTML, CSS, JavaScript",
+    Stack: ["html", "css", "javascript", "figma"],
+    githubLink: "https://github.com/Amiz001/Suwa-saviya-ai",
+    demoLink: "https://suwa-saviya-ai.netlify.app",
+  },*/
 ];
 
 const Hero = () => {
