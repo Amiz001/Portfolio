@@ -25,7 +25,7 @@ import {
   SiPhp,
   SiGit,
   SiOpenai,
-  SiFigma
+  SiFigma,
 } from "react-icons/si";
 
 import {
@@ -138,7 +138,7 @@ const Hero = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [active, setActive] = useState("hero");
   const [index, setIndex] = useState(1);
-  const [animate, setAnimate] = useState(true);;
+  const [animate, setAnimate] = useState(true);
   const intervalRef = useRef(null);
 
   const current = projects[index];
@@ -605,7 +605,9 @@ const Hero = () => {
         id=""
         className="w-full min-h-[50vh] md:h-130 mt-4 sm:mt-20 md:mt-40 px-4 sm:px-8 md:px-32 py-8 md:py-16 bg-black flex justify-center items-center overflow-hidden"
       >
-        <div className="reveal-section relative w-full h-full bg-black/50 rounded-2xl md:rounded-4xl border-1 border-white/10 overflow-hidden p-8 md:p-0">
+        <div className="reveal-section relative w-full h-full bg-black/50 rounded-2xl md:rounded-4xl border border-white/10 overflow-hidden p-8 md:p-0">
+          <div className="horizontal-light-bar"></div>
+          <div className="vertical-light-bar"></div>
           <div className="absolute right-0 w-20 h-20 md:w-30 md:h-30 bg-gradient-to-br rounded-4xl from-[#4079ff] to-[#40ffaa] blur-[100px] md:blur-[150px]"></div>
           <div className="absolute left-0 bottom-0 w-20 h-20 md:w-30 md:h-30 bg-gradient-to-br rounded-4xl from-[#4079ff] to-[#40ffaa] blur-[100px] md:blur-[150px]"></div>
           <div className="relative md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 flex flex-col justify-center items-center gap-8 md:gap-12 h-full">

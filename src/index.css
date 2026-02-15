@@ -118,3 +118,63 @@
    30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
    100%    {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
 }
+
+
+/* Bottom card animation */
+
+.horizontal-light-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.074);
+  filter: blur(0px);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: moveLightY 8s linear infinite forwards;
+}
+
+.vertical-light-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.123);
+  filter: blur(0px);
+  opacity: 0.2;
+  pointer-events: none;
+  animation: moveLightX 15s linear infinite forwards;
+}
+
+@keyframes moveLightY {
+  0% {
+    top: -30%;
+    opacity: 0;
+  }
+  50% {
+    top: 130%;
+    opacity: 0.2;
+  }
+  100% {
+    top: -30%;
+    opacity: 0.1;
+  }
+}
+
+@keyframes moveLightX {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 120%;
+    opacity: 0.1;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
